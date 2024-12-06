@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test/{name}', [\App\Http\Controllers\DomainController::class, "index"]);
+Route::get('/domain/{name}', [\App\Http\Controllers\DomainController::class, "index"]);
