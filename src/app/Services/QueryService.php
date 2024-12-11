@@ -20,7 +20,7 @@ class QueryService
             "currency_id" => "currencies"
         ];
 
-    public function buildQuery(array $filters, string $name): QueryDTO {
+    public function buildQuery(array $data): QueryDTO {
 //        $uuid = json_encode($filters);
 //
 //        $result = Cache::get($uuid);
@@ -34,7 +34,7 @@ class QueryService
 
         $values = ["false" => False, "true" => True];
 
-        foreach ($filters["filters"] as $key => $value) {
+        foreach ($data["filters"] as $key => $value) {
             if (in_array($key, self::RELATIONS)) {
                 $query = $query->with(self::RELATIONS[$key]);
             }
@@ -50,13 +50,13 @@ class QueryService
 
 
 
-        if (empty($name)) {
+        if (empty($data["name"])) {
             $this->putToCache($query, $uuid);
 
             return (new QueryDTO())->setQuery($query)->setUuid($uuid);
         }
 
-        $query->where('name', '=', $name);
+        $query->where('name', '=', $data["name"]);
         $this->putToCache($query, $uuid);
 
         return (new QueryDTO())->setQuery($query)->setUuid($uuid);

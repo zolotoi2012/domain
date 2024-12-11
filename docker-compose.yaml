@@ -15,15 +15,15 @@ services:
       - backend
 
   db:
-    image : mysql
-    container_name : mysql
-    volumes:
-      - ./mysql/data:/var/lib/mysql
-    ports:
-      - "3306:3306"
+    image: mysql:8.0
+    container_name: db
     environment:
       MYSQL_DATABASE: app
       MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    networks:
+      - backend
 
   redis:
     image: redis:latest
