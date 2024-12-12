@@ -21,7 +21,7 @@ final readonly class CacheDataProvider implements DataProviderInterface
         $key = $this->createKey($filter);
 
         if ($this->cache->has($key)) {
-           // return $this->cache->get($key);
+           return $this->cache->get($key);
         }
 
         $data = $this->original->getDataByFilters($entityType, $request);

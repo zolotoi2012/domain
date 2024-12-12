@@ -8,7 +8,9 @@ class OrderApiFilter implements ApiFilterInterface
 {
     public function getFilters(): array
     {
-        return [];
+        return [
+            'number',
+        ];
     }
 
     public function getEntityClass(): string

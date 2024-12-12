@@ -1,17 +1,17 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\Product;
+;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 
-class ProductSeeder extends Seeder
+class OrderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Product::factory()->count(100000)->create();
+        Order::factory()->count(10000)->create();
     }
 }

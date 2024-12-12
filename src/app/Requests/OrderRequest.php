@@ -9,7 +9,7 @@ final class OrderRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|min:3|max:100',
+            'number' => 'string|min:3|max:100',
         ];
     }
 }
