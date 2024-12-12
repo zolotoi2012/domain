@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Domain;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
-class DomainSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Domain::factory(Domain::factory()->definition())->count(100000)->create();
+        Product::factory()->count(100000)->create();
     }
 }

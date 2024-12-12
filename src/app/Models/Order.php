@@ -5,8 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Domain extends Model
+class Order extends Model
 {
-    /** @use HasFactory<\Database\Factories\DomainFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'number'
+    ];
 }
